@@ -3,7 +3,7 @@ var PORT = process.env.PORT||3000;
 const path = require('path');
 const nodemailer = require("nodemailer");
 var app = express();
-require("dotenv").config();
+// require("dotenv").config();
 require('./config');
 
 
