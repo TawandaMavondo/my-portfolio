@@ -4,6 +4,7 @@ const path = require('path');
 const nodemailer = require("nodemailer");
 var app = express();
 require("dotenv").config();
+require('./config');
 
 
 // Local Imports 
