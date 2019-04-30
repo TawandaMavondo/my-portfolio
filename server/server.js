@@ -3,9 +3,7 @@ var PORT = process.env.PORT||3000;
 const path = require('path');
 const nodemailer = require("nodemailer");
 var app = express();
-// require("dotenv").config();
 require('./config');
-
 
 // Local Imports 
 const mongooseConfig = require('./db/mongooseConfig');
@@ -25,6 +23,14 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'../','public')));
 
+app.get('/messages',(req,res)=>{
+messageModel.find().then(messages=>{
+    res.send(messages)
+}).catch(err=>{
+    res.status(400).send(err);
+});
+
+});
 app.post('/contact',(req,res)=>{
     var body =req.body;
     var newContact = new messageModel({
