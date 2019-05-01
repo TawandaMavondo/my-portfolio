@@ -74,3 +74,8 @@ $(function() {
 $('#name').focus(function() {
   $('#success').html('');
 });
+// Resume button 
+$("#resume_btn").on('click',function(evt){
+  evt.preventDefault();
+  alert("Resume Page is not yet ready please try again later");
+});
